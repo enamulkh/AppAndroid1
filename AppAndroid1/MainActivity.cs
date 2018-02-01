@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using System;
 
 namespace AppAndroid1
 {
@@ -13,6 +14,17 @@ namespace AppAndroid1
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+
+            Button button = FindViewById<Button>(Resource.Id.button1);
+
+            button.Click += Button_Click;
+
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            EditText textEntry = FindViewById<EditText>(Resource.Id.textView1);
+            textEntry.Text = "Button Click is working";
         }
     }
 }
